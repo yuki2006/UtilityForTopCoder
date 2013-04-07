@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * 主にTopCoder用の便利な処理をまとめたUtilityクラスです。
@@ -10,6 +12,47 @@ import java.util.Arrays;
  *
  */
 class UtilityForTC {
+	/**
+	 * int 配列の反転をします。
+	 * (int 以外の場合は適宜書き換えてください）
+	 *
+	 * @param obj
+	 *            反転させる配列
+	 * @return 反転後の配列
+	 */
+	public static int[] arrayReverse(int[] obj) {
+		int[] result = new int[obj.length];
+		for (int i = 0; i < obj.length; i++) {
+			result[i] = obj[obj.length - i - 1];
+		}
+		return result;
+	}
+	/**
+	 * int 配列の反転をします。
+	 * Collections.reverse を使うために
+	 * List に変換して反転　これをするくらいなら普通に反転したほうが良さそう？
+	 * プリミティブとクラス型の変換部分が面倒。。
+	 * (int 以外の場合は適宜書き換えてください）
+	 *
+	 * @param obj
+	 *            反転させる配列
+	 * @return 反転後の配列
+	 */
+	public static int[] arrayReverseUseList(int[] obj) {
+		List<Integer> list = new ArrayList<Integer>();
+		for (int object : obj) {
+			list.add(object);
+		}
+
+		Collections.reverse(list);
+
+		Integer[] integers = list.toArray(new Integer[0]);
+		int[] result = new int[list.size()];
+		for (int i = 0; i < result.length; i++) {
+			result[i] = integers[i];
+		}
+		return result;
+	}
 	/**
 	 * ArrayList<Character> から Stringに変換するための処理
 	 *
@@ -47,10 +90,12 @@ class UtilityForTC {
 	 *
 	 * @see UtilityForTC (stringReverse)
 	 */
-	public static String stringReverseSB(String str) {
+	public static String stringReverseUseSB(String str) {
 		String result = new StringBuffer(str).reverse().toString();
 		return result;
 	}
+
+
 
 	/**
 	 * 変数出力の処理例
@@ -82,6 +127,7 @@ class UtilityForTC {
 	 * テスト用メイン
 	 */
 	public static void main(String[] args) {
-		UtilityForTC.print();
+		int[] array = { 3, 5, 7, 9 };
+		UtilityForTC.arrayReverseUseList(array);
 	}
 }
