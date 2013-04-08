@@ -27,6 +27,7 @@ class UtilityForTC {
 		}
 		return result;
 	}
+
 	/**
 	 * int 配列の反転をします。
 	 * Collections.reverse を使うために
@@ -53,6 +54,7 @@ class UtilityForTC {
 		}
 		return result;
 	}
+
 	/**
 	 * ArrayList<Character> から Stringに変換するための処理
 	 *
@@ -95,7 +97,17 @@ class UtilityForTC {
 		return result;
 	}
 
-
+	/**
+	 * String を 配列 (char 配列）に変換する処理です。
+	 *
+	 * @param str
+	 *            元の文字列
+	 * @return 変換後のchar配列
+	 */
+	public static char[] stringToCharArray(String str) {
+		char[] result = str.toCharArray();
+		return result;
+	}
 
 	/**
 	 * 変数出力の処理例
