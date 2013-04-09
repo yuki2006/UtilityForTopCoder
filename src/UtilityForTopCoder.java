@@ -18,14 +18,14 @@ class UtilityForTopCoder {
 	 * int 配列の反転をします。
 	 * (int 以外の場合は適宜書き換えてください）
 	 *
-	 * @param ints
+	 * @param values
 	 *            反転させる配列
 	 * @return 反転後の配列
 	 */
-	public static int[] arrayReverse(int[] ints) {
-		int[] result = new int[ints.length];
-		for (int i = 0; i < ints.length; i++) {
-			result[i] = ints[ints.length - i - 1];
+	public static int[] arrayReverse(int[] values) {
+		int[] result = new int[values.length];
+		for (int i = 0; i < values.length; i++) {
+			result[i] = values[values.length - i - 1];
 		}
 		return result;
 	}
@@ -37,13 +37,13 @@ class UtilityForTopCoder {
 	 * プリミティブとクラス型の変換部分が面倒。。
 	 * (int 以外の場合は適宜書き換えてください）
 	 *
-	 * @param obj
+	 * @param values
 	 *            反転させる配列
 	 * @return 反転後の配列
 	 */
-	public static int[] arrayReverseUseList(int[] obj) {
+	public static int[] arrayReverseUseList(int[] values) {
 		List<Integer> list = new ArrayList<Integer>();
-		for (int object : obj) {
+		for (int object : values) {
 			list.add(object);
 		}
 
@@ -157,13 +157,13 @@ class UtilityForTopCoder {
 	 * 与えられたintの配列で一意なもののみ数える処理です。
 	 * int だけでなく必要なら適宜,型を書き換えてください。
 	 *
-	 * @param ints
+	 * @param values
 	 *            元のintの配列です
 	 * @return 一意なもの数
 	 */
-	public static int uniqueIntsSize(int[] ints) {
+	public static int uniqueIntsSize(int[] values) {
 		Set<Integer> set = new HashSet<Integer>();
-		for (int string : ints) {
+		for (int string : values) {
 			set.add(string);
 		}
 		int result = set.size();
