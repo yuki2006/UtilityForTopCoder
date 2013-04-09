@@ -10,24 +10,25 @@ import java.util.Set;
  * このコードを丸々コピーしてもいいですし、必要な処理だけコピペしてもいいです。
  * メソッド内のコードをコピペする場合は　メソッドパラメータ・リターンは適宜自分のコードに合うようにしてください。
  *
- * @author yuki
+ * @author yuki2006
  *
  */
 class UtilityForTopCoder {
 	/**
 	 * int 配列の反転をします。
+	 * Arraysクラスに習ってパラメータの配列を書き換えます。
 	 * (int 以外の場合は適宜書き換えてください）
 	 *
+	 * @author yuki2006
 	 * @param values
 	 *            反転させる配列
-	 * @return 反転後の配列
 	 */
-	public static int[] arrayReverse(int[] values) {
-		int[] result = new int[values.length];
-		for (int i = 0; i < values.length; i++) {
-			result[i] = values[values.length - i - 1];
+	public static void arrayReverse(int[] values) {
+		for (int i = 0; i < values.length / 2; i++) {
+			int tmp = values[values.length - i - 1];
+			values[values.length - i - 1] = values[i];
+			values[i] = tmp;
 		}
-		return result;
 	}
 
 	/**
@@ -37,11 +38,12 @@ class UtilityForTopCoder {
 	 * プリミティブとクラス型の変換部分が面倒。。
 	 * (int 以外の場合は適宜書き換えてください）
 	 *
+	 * @author yuki2006
 	 * @param values
 	 *            反転させる配列
 	 * @return 反転後の配列
 	 */
-	public static int[] arrayReverseUseList(int[] values) {
+	public static void arrayReverseUseList(int[] values) {
 		List<Integer> list = new ArrayList<Integer>();
 		for (int object : values) {
 			list.add(object);
@@ -50,16 +52,15 @@ class UtilityForTopCoder {
 		Collections.reverse(list);
 
 		Integer[] integers = list.toArray(new Integer[0]);
-		int[] result = new int[list.size()];
-		for (int i = 0; i < result.length; i++) {
-			result[i] = integers[i];
+		for (int i = 0; i < values.length; i++) {
+			values[i] = integers[i];
 		}
-		return result;
 	}
 
 	/**
 	 * ArrayList<Character> から Stringに変換するための処理
 	 *
+	 * @author yuki2006
 	 * @param characters
 	 *            変換元のArrayList
 	 * @return 変換後の文字列
@@ -77,6 +78,7 @@ class UtilityForTopCoder {
 	/**
 	 * char をStringに変換する処理です。
 	 *
+	 * @author yuki2006
 	 * @param c
 	 * @return
 	 */
@@ -85,10 +87,49 @@ class UtilityForTopCoder {
 	}
 
 	/**
+	 * int 配列に対して indexOfの処理を行います。
+	 *
+	 * @author yuki2006
+	 * @param values
+	 *            対象の配列
+	 * @param target
+	 *            探す値
+	 * @return
+	 */
+	public static int indexOf(int[] values, int target) {
+		for (int i = 0; i < values.length; i++) {
+			if (values[i] == target) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	/**
+	 * 文字列（String）配列に対して indexOfの処理を行います。
+	 *
+	 * @author yuki2006
+	 * @param values
+	 *            対象の配列
+	 * @param target
+	 *            探す文字列
+	 * @return
+	 */
+	public static int indexOf(String[] values, String target) {
+		for (int i = 0; i < values.length; i++) {
+			if (values[i].equals(target)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	/**
 	 * 配列から最小値を探す処理です。
 	 * 空の配列は渡さないでください。
 	 * intではない場合は適宜、型を書き換えてください。
 	 *
+	 * @author yuki2006
 	 * @param values
 	 * @return
 	 */
@@ -105,6 +146,7 @@ class UtilityForTopCoder {
 	 * 空の配列は渡さないでください。
 	 * intではない場合は適宜、型を書き換えてください。
 	 *
+	 * @author yuki2006
 	 * @param values
 	 * @return
 	 */
@@ -119,6 +161,8 @@ class UtilityForTopCoder {
 	/**
 	 * 文字列を反転させる処理
 	 * charに変換した基本的な実装
+	 *
+	 * @author yuki2006
 	 */
 	public static String stringReverse(String str) {
 		char[] charArray = str.toCharArray();
@@ -134,6 +178,7 @@ class UtilityForTopCoder {
 	 * 文字列を反転させる処理
 	 * StringBuilderを経由した実装 実装としては短い
 	 *
+	 * @author yuki2006
 	 * @see UtilityForTopCoder (stringReverse)
 	 */
 	public static String stringReverseUseSB(String str) {
@@ -144,6 +189,7 @@ class UtilityForTopCoder {
 	/**
 	 * String を 配列 (char 配列）に変換する処理です。
 	 *
+	 * @author yuki2006
 	 * @param str
 	 *            元の文字列
 	 * @return 変換後のchar配列
@@ -157,16 +203,21 @@ class UtilityForTopCoder {
 	 * 与えられたintの配列で一意なもののみ数える処理です。
 	 * int だけでなく必要なら適宜,型を書き換えてください。
 	 *
+	 * @author yuki2006
 	 * @param values
 	 *            元のintの配列です
 	 * @return 一意なもの数
 	 */
-	public static int uniqueIntsSize(int[] values) {
+	public static int[] uniqueIntsArray(int[] values) {
 		Set<Integer> set = new HashSet<Integer>();
 		for (int string : values) {
 			set.add(string);
 		}
-		int result = set.size();
+		Integer[] tmp = set.toArray(new Integer[0]);
+		int[] result = new int[tmp.length];
+		for (int i = 0; i < result.length; i++) {
+			result[i] = tmp[i];
+		}
 		return result;
 	}
 
@@ -174,6 +225,7 @@ class UtilityForTopCoder {
 	 * 与えられた文字列で一意なもののみの配列を返します。
 	 * String だけでなく必要なら適宜,型を書き換えてください。
 	 *
+	 * @author yuki2006
 	 * @param strings
 	 *            元のstringの配列です
 	 * @return 一意な配列
