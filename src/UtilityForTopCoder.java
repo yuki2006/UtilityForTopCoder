@@ -13,19 +13,19 @@ import java.util.Set;
  * @author yuki
  *
  */
-class UtilityForTppCoder {
+class UtilityForTopCoder {
 	/**
 	 * int 配列の反転をします。
 	 * (int 以外の場合は適宜書き換えてください）
 	 *
-	 * @param obj
+	 * @param ints
 	 *            反転させる配列
 	 * @return 反転後の配列
 	 */
-	public static int[] arrayReverse(int[] obj) {
-		int[] result = new int[obj.length];
-		for (int i = 0; i < obj.length; i++) {
-			result[i] = obj[obj.length - i - 1];
+	public static int[] arrayReverse(int[] ints) {
+		int[] result = new int[ints.length];
+		for (int i = 0; i < ints.length; i++) {
+			result[i] = ints[ints.length - i - 1];
 		}
 		return result;
 	}
@@ -75,6 +75,48 @@ class UtilityForTppCoder {
 	}
 
 	/**
+	 * char をStringに変換する処理です。
+	 *
+	 * @param c
+	 * @return
+	 */
+	public static String charToString(char c) {
+		return new String(new char[] { c });
+	}
+
+	/**
+	 * 配列から最小値を探す処理です。
+	 * 空の配列は渡さないでください。
+	 * intではない場合は適宜、型を書き換えてください。
+	 *
+	 * @param values
+	 * @return
+	 */
+	public static int min(int[] values) {
+		int min = Integer.MAX_VALUE;
+		for (int i : values) {
+			min = Math.min(min, i);
+		}
+		return min;
+	}
+
+	/**
+	 * 配列から最大値を探す処理です。
+	 * 空の配列は渡さないでください。
+	 * intではない場合は適宜、型を書き換えてください。
+	 *
+	 * @param values
+	 * @return
+	 */
+	public static int max(int[] values) {
+		int max = Integer.MIN_VALUE;
+		for (int i : values) {
+			max = Math.max(max, i);
+		}
+		return max;
+	}
+
+	/**
 	 * 文字列を反転させる処理
 	 * charに変換した基本的な実装
 	 */
@@ -92,7 +134,7 @@ class UtilityForTppCoder {
 	 * 文字列を反転させる処理
 	 * StringBuilderを経由した実装 実装としては短い
 	 *
-	 * @see UtilityForTppCoder (stringReverse)
+	 * @see UtilityForTopCoder (stringReverse)
 	 */
 	public static String stringReverseUseSB(String str) {
 		String result = new StringBuffer(str).reverse().toString();
@@ -167,15 +209,8 @@ class UtilityForTppCoder {
 	/**
 	 * インスタンス化させないため
 	 */
-	private UtilityForTppCoder() {
+	private UtilityForTopCoder() {
 
 	}
 
-	/**
-	 * テスト用メイン
-	 */
-	public static void main(String[] args) {
-		int[] array = { 3, 5, 7, 9 };
-		UtilityForTppCoder.arrayReverseUseList(array);
-	}
 }
