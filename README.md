@@ -1,7 +1,7 @@
 UtilityForTopCoder
 ==================
 
-主に[TopCoder][1] SRM用の便利な処理をまとめたUtilityクラスです。
+主に [TopCoder][1] SRM用の便利な処理をまとめたUtilityクラスです。
 
 「え？Javaの組み込みクラスに配列を反転させる処理はないの？」
 のようにTopCoder SRM をする上で組み込みの処理が足りないのに不満をもったので、
@@ -55,4 +55,4 @@ License
 一応テストはしておりますが、コードの正確性は保証しておりませんので、
 参考程度にご使用してください。
 
-[1]http://www.topcoder.com/
+[1]: http://www.topcoder.com/
