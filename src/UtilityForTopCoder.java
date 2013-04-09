@@ -178,7 +178,7 @@ class UtilityForTopCoder {
 	 *            元のstringの配列です
 	 * @return 一意な配列
 	 */
-	public static String[] uniqueStringsSize(String[] strings) {
+	public static String[] uniqueStringsArray(String[] strings) {
 		Set<String> set = new HashSet<String>();
 		for (String string : strings) {
 			set.add(string);
