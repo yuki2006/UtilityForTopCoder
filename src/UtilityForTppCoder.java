@@ -13,7 +13,7 @@ import java.util.Set;
  * @author yuki
  *
  */
-class UtilityForTC {
+class UtilityForTppCoder {
 	/**
 	 * int 配列の反転をします。
 	 * (int 以外の場合は適宜書き換えてください）
@@ -92,7 +92,7 @@ class UtilityForTC {
 	 * 文字列を反転させる処理
 	 * StringBuilderを経由した実装 実装としては短い
 	 *
-	 * @see UtilityForTC (stringReverse)
+	 * @see UtilityForTppCoder (stringReverse)
 	 */
 	public static String stringReverseUseSB(String str) {
 		String result = new StringBuffer(str).reverse().toString();
@@ -167,7 +167,7 @@ class UtilityForTC {
 	/**
 	 * インスタンス化させないため
 	 */
-	private UtilityForTC() {
+	private UtilityForTppCoder() {
 
 	}
 
@@ -176,6 +176,6 @@ class UtilityForTC {
 	 */
 	public static void main(String[] args) {
 		int[] array = { 3, 5, 7, 9 };
-		UtilityForTC.arrayReverseUseList(array);
+		UtilityForTppCoder.arrayReverseUseList(array);
 	}
 }
