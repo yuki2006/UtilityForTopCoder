@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 主にTopCoder用の便利な処理をまとめたUtilityクラスです。
@@ -110,6 +112,40 @@ class UtilityForTC {
 	}
 
 	/**
+	 * 与えられたintの配列で一意なもののみ数える処理です。
+	 * int だけでなく必要なら適宜,型を書き換えてください。
+	 *
+	 * @param ints
+	 *            元のintの配列です
+	 * @return 一意なもの数
+	 */
+	public static int uniqueIntsSize(int[] ints) {
+		Set<Integer> set = new HashSet<Integer>();
+		for (int string : ints) {
+			set.add(string);
+		}
+		int result = set.size();
+		return result;
+	}
+
+	/**
+	 * 与えられた文字列で一意なもののみの配列を返します。
+	 * String だけでなく必要なら適宜,型を書き換えてください。
+	 *
+	 * @param strings
+	 *            元のstringの配列です
+	 * @return 一意な配列
+	 */
+	public static String[] uniqueStringsSize(String[] strings) {
+		Set<String> set = new HashSet<String>();
+		for (String string : strings) {
+			set.add(string);
+		}
+		String[] result = set.toArray(new String[0]);
+		return result;
+	}
+
+	/**
 	 * 変数出力の処理例
 	 */
 	public static void print() {
@@ -127,7 +163,7 @@ class UtilityForTC {
 
 	}
 
-	// //////////////////////////////////////////////これは以下は実際には不必要
+	// //////////////////////////////////////////////これ以下は実際には不必要
 	/**
 	 * インスタンス化させないため
 	 */
