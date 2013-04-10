@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -27,6 +28,21 @@ class UtilityForTopCoder {
 			num /= 2;
 		}
 		return count;
+	}
+
+	/**
+	 * HashMapからすべて要素を取り出す処理を行います。
+	 *
+	 * @param map
+	 *            対象のHashMapです。String,Integerの組としてますが基本的には何の組み合わせでもいいです。
+	 */
+	public static void getHashMapElement(HashMap<String, Integer> map) {
+
+		for (String key : map.keySet()) {
+			int value = map.get(key);
+			System.out.println(value);
+		}
+
 	}
 
 	/**
@@ -236,7 +252,7 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * 与えられたintの配列で一意なもののみ数える処理です。 int だけでなく必要なら適宜,型を書き換えてください。
+	 * 与えられたintの配列で一意なものにする処理です。 int だけでなく必要なら適宜,型を書き換えてください。
 	 *
 	 * @author yuki2006
 	 * @param values

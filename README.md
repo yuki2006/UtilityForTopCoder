@@ -4,7 +4,7 @@ UtilityForTopCoder
 主に [TopCoder][1] SRMに特化した便利な処理をまとめたUtilityクラスです。
 
 「え？Javaの組み込みのArrayクラスに配列を反転させる処理はないの？」
-「配列をindexOfさせる処理がないの！？」
+「配列に対するindexOfがないの！？」
 のようにTopCoder SRM をする上で組み込みの処理が足りないと不満をもったので、
 比較的簡単な処理だけどよく使うような処理をまとめたものを作っています。
 （作成途中）
@@ -33,6 +33,10 @@ https://github.com/yuki2006/UtilityForTopCoder/blob/master/src/UtilityForTopCode
     (一旦スタティックメソッドで呼び出して、Eclipseの機能でインライン展開すると楽かも)
 
 UtilityForTopCoder.javaのファイルをそのまま作業フォルダにコピーしてもTopCoder SRMでは使えませんのでご注意ください。
+
+コードをコピーしてもらうのが目標ではなく、それぞれの処理に書かれてるコードを理解してもらって、
+*新しい発見をしたり、自分で書けるようになってもらうのが目標*です。
+
 
 
 対象
