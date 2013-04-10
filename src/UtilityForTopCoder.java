@@ -9,16 +9,16 @@ import java.util.Set;
  * 主にTopCoder用の便利な処理をまとめたUtilityクラスです。
  * このコードを丸々コピーしてもいいですし、必要な処理だけコピペしてもいいです。
  * メソッド内のコードをコピペする場合は　メソッドパラメータ・リターンは適宜自分のコードに合うようにしてください。
- *
+ * 
  * @author yuki2006
- *
+ * 
  */
 class UtilityForTopCoder {
 	/**
 	 * int 配列の反転をします。
 	 * Arraysクラスに習ってパラメータの配列を書き換えます。
 	 * (int 以外の場合は適宜書き換えてください）
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param values
 	 *            反転させる配列
@@ -37,7 +37,7 @@ class UtilityForTopCoder {
 	 * List に変換して反転　これをするくらいなら普通に反転したほうが良さそう？
 	 * プリミティブとクラス型の変換部分が面倒。。
 	 * (int 以外の場合は適宜書き換えてください）
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param values
 	 *            反転させる配列
@@ -59,7 +59,7 @@ class UtilityForTopCoder {
 
 	/**
 	 * ArrayList<Character> から Stringに変換するための処理
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param characters
 	 *            変換元のArrayList
@@ -77,7 +77,7 @@ class UtilityForTopCoder {
 
 	/**
 	 * char をStringに変換する処理です。
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param c
 	 * @return
@@ -88,7 +88,7 @@ class UtilityForTopCoder {
 
 	/**
 	 * int 配列に対して indexOfの処理を行います。
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param values
 	 *            対象の配列
@@ -107,7 +107,7 @@ class UtilityForTopCoder {
 
 	/**
 	 * 文字列（String）配列に対して indexOfの処理を行います。
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param values
 	 *            対象の配列
@@ -125,10 +125,23 @@ class UtilityForTopCoder {
 	}
 
 	/**
+	 * int から Stringに変換させる処理です。
+	 * 
+	 * @param value
+	 *            元のintの値です。
+	 * @return 変換後のStringです。
+	 */
+	public static String intToString(int value) {
+		return value + "";
+
+		// return String.valueOf(value);
+	}
+
+	/**
 	 * 配列から最小値を探す処理です。
 	 * 空の配列は渡さないでください。
 	 * intではない場合は適宜、型を書き換えてください。
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param values
 	 * @return
@@ -145,7 +158,7 @@ class UtilityForTopCoder {
 	 * 配列から最大値を探す処理です。
 	 * 空の配列は渡さないでください。
 	 * intではない場合は適宜、型を書き換えてください。
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param values
 	 * @return
@@ -161,7 +174,7 @@ class UtilityForTopCoder {
 	/**
 	 * 文字列を反転させる処理
 	 * charに変換した基本的な実装
-	 *
+	 * 
 	 * @author yuki2006
 	 */
 	public static String stringReverse(String str) {
@@ -177,7 +190,7 @@ class UtilityForTopCoder {
 	/**
 	 * 文字列を反転させる処理
 	 * StringBuilderを経由した実装 実装としては短い
-	 *
+	 * 
 	 * @author yuki2006
 	 * @see UtilityForTopCoder (stringReverse)
 	 */
@@ -188,7 +201,7 @@ class UtilityForTopCoder {
 
 	/**
 	 * String を 配列 (char 配列）に変換する処理です。
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param str
 	 *            元の文字列
@@ -202,7 +215,7 @@ class UtilityForTopCoder {
 	/**
 	 * 与えられたintの配列で一意なもののみ数える処理です。
 	 * int だけでなく必要なら適宜,型を書き換えてください。
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param values
 	 *            元のintの配列です
@@ -224,7 +237,7 @@ class UtilityForTopCoder {
 	/**
 	 * 与えられた文字列で一意なもののみの配列を返します。
 	 * String だけでなく必要なら適宜,型を書き換えてください。
-	 *
+	 * 
 	 * @author yuki2006
 	 * @param strings
 	 *            元のstringの配列です
