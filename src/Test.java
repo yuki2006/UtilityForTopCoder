@@ -9,8 +9,7 @@ import java.util.Arrays;
 public class Test {
 
 	/**
-	 * テスト用メイン
-	 * 起動時には VMのパラメータ -ea を追加して実行すること
+	 * テスト用メイン 起動時には VMのパラメータ -ea を追加して実行すること
 	 */
 	public static void main(String[] args) {
 		int[] array = { 3, 5, 7, 9, 5 };
@@ -23,6 +22,9 @@ public class Test {
 		UtilityForTopCoder.reverseUseList(array);
 		assert Arrays.equals(array, new int[] { 5, 9, 7, 5, 3 });
 		assert UtilityForTopCoder.reverse("abc").equals("cba");
+
+		assert UtilityForTopCoder.bitcount(8) == 1;
+		assert UtilityForTopCoder.bitcount(127) == 7;
 
 	}
 }

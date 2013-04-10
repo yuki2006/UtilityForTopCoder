@@ -6,14 +6,29 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 主にTopCoder用の便利な処理をまとめたUtilityクラスです。
- * このコードを丸々コピーしてもいいですし、必要な処理だけコピペしてもいいです。
+ * 主にTopCoder用の便利な処理をまとめたUtilityクラスです。 このコードを丸々コピーしてもいいですし、必要な処理だけコピペしてもいいです。
  * メソッド内のコードをコピペする場合は　メソッドパラメータ・リターンは適宜自分のコードに合うようにしてください。
  *
  * @author yuki2006
  *
  */
 class UtilityForTopCoder {
+	/**
+	 * 引数として渡した値の各ビットで１の値の総数を返します。 ただし、正の数を対象とします。
+	 *
+	 * @param num
+	 *            ビットを数える値
+	 * @return ビットの数を返します。
+	 */
+	public static int bitcount(int num) {
+		int count = 0;
+		while (num > 0) {
+			count += num % 2;
+			num /= 2;
+		}
+		return count;
+	}
+
 	/**
 	 * int 配列に対して indexOfの処理を行います。
 	 *
@@ -53,9 +68,7 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * 配列から最大値を探す処理です。
-	 * 空の配列は渡さないでください。
-	 * intではない場合は適宜、型を書き換えてください。
+	 * 配列から最大値を探す処理です。 空の配列は渡さないでください。 intではない場合は適宜、型を書き換えてください。
 	 *
 	 * @author yuki2006
 	 * @param values
@@ -70,9 +83,7 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * 配列から最小値を探す処理です。
-	 * 空の配列は渡さないでください。
-	 * intではない場合は適宜、型を書き換えてください。
+	 * 配列から最小値を探す処理です。 空の配列は渡さないでください。 intではない場合は適宜、型を書き換えてください。
 	 *
 	 * @author yuki2006
 	 * @param values
@@ -105,9 +116,7 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * int 配列の反転をします。
-	 * Arraysクラスに習ってパラメータの配列を書き換えます。
-	 * (int 以外の場合は適宜書き換えてください）
+	 * int 配列の反転をします。 Arraysクラスに習ってパラメータの配列を書き換えます。 (int 以外の場合は適宜書き換えてください）
 	 *
 	 * @author yuki2006
 	 * @param values
@@ -122,8 +131,7 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * 文字列を反転させる処理
-	 * charに変換した基本的な実装
+	 * 文字列を反転させる処理 charに変換した基本的な実装
 	 *
 	 * @author yuki2006
 	 */
@@ -138,11 +146,9 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * int 配列の反転をします。
-	 * Collections.reverse を使うために
-	 * List に変換して反転　これをするくらいなら普通に反転したほうが良さそう？
-	 * プリミティブとクラス型の変換部分が面倒。。
-	 * (int 以外の場合は適宜書き換えてください）
+	 * int 配列の反転をします。 Collections.reverse を使うために List
+	 * に変換して反転　これをするくらいなら普通に反転したほうが良さそう？ プリミティブとクラス型の変換部分が面倒。。 (int
+	 * 以外の場合は適宜書き換えてください）
 	 *
 	 * @author yuki2006
 	 * @param values
@@ -164,8 +170,7 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * 文字列を反転させる処理
-	 * StringBuilderを経由した実装 実装としては短い
+	 * 文字列を反転させる処理 StringBuilderを経由した実装 実装としては短い
 	 *
 	 * @author yuki2006
 	 * @see UtilityForTopCoder (stringReverse)
@@ -231,8 +236,7 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * 与えられたintの配列で一意なもののみ数える処理です。
-	 * int だけでなく必要なら適宜,型を書き換えてください。
+	 * 与えられたintの配列で一意なもののみ数える処理です。 int だけでなく必要なら適宜,型を書き換えてください。
 	 *
 	 * @author yuki2006
 	 * @param values
@@ -253,8 +257,7 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * 与えられた文字列で一意なもののみの配列を返します。
-	 * String だけでなく必要なら適宜,型を書き換えてください。
+	 * 与えられた文字列で一意なもののみの配列を返します。 String だけでなく必要なら適宜,型を書き換えてください。
 	 *
 	 * @author yuki2006
 	 * @param strings
