@@ -17,12 +17,12 @@ public class Test {
 		assert 3 == UtilityForTopCoder.min(array);
 		assert 9 == UtilityForTopCoder.max(array);
 		assert 1 == UtilityForTopCoder.indexOf(array, 5);
-		int[] tmp = UtilityForTopCoder.uniqueIntsArray(array);
+		int[] tmp = UtilityForTopCoder.unique(array);
 		assert Arrays.equals(tmp, new int[] { 3, 5, 7, 9 });
 
-		UtilityForTopCoder.arrayReverseUseList(array);
+		UtilityForTopCoder.reverseUseList(array);
 		assert Arrays.equals(array, new int[] { 5, 9, 7, 5, 3 });
-		assert UtilityForTopCoder.stringReverse("abc").equals("cba");
+		assert UtilityForTopCoder.reverse("abc").equals("cba");
 
 	}
 }
