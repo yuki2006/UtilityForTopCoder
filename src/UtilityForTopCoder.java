@@ -240,6 +240,26 @@ class UtilityForTopCoder {
 	}
 
 	/**
+	 * intの値を2進数表現の文字列に変換します。
+	 *
+	 * @param num
+	 * @return
+	 */
+	public static String toBinaryString(int num) {
+		return Integer.toBinaryString(num);
+	}
+
+	/**
+	 * intの値を16進数表現の文字列に変換します。
+	 *
+	 * @param num
+	 * @return
+	 */
+	public static String toHexString(int num) {
+		return Integer.toHexString(num);
+	}
+
+	/**
 	 * char をStringに変換する処理です。
 	 *
 	 * @author yuki2006
