@@ -97,6 +97,7 @@ class UtilityForTopCoder {
 
 	/**
 	 * 配列から最大値を探す処理です。 空の配列は渡さないでください。 intではない場合は適宜、型を書き換えてください。
+	 * Math.maxと拡張for文を使って短く記述。
 	 *
 	 * @author yuki2006
 	 * @param values
@@ -108,6 +109,26 @@ class UtilityForTopCoder {
 			max = Math.max(max, i);
 		}
 		return max;
+	}
+
+	/**
+	 * 配列の最大値の添字を探す処理です。
+	 * よく習う最大値を求める処理になってます。
+	 *
+	 * @author yuki2006
+	 * @param values
+	 * @return
+	 */
+	public static int maxIndex(int[] values) {
+		int max = Integer.MIN_VALUE;
+		int maxIndex = -1;
+		for (int i = 0; i < values.length; i++) {
+			if (max < values[i]) {
+				max = values[i];
+				maxIndex = i;
+			}
+		}
+		return maxIndex;
 	}
 
 	/**
@@ -127,6 +148,8 @@ class UtilityForTopCoder {
 
 	/**
 	 * 変数出力の処理例
+	 *
+	 * @author yuki2006
 	 */
 	public static void print() {
 		// /////////////////変数例
@@ -209,6 +232,16 @@ class UtilityForTopCoder {
 	}
 
 	/**
+	 * intの値を2進数表現の文字列に変換します。
+	 *
+	 * @param num
+	 * @return
+	 */
+	public static String toBinaryString(int num) {
+		return Integer.toBinaryString(num);
+	}
+
+	/**
 	 * String を 配列 (char 配列）に変換する処理です。
 	 *
 	 * @author yuki2006
@@ -219,6 +252,16 @@ class UtilityForTopCoder {
 	public static char[] toCharArray(String str) {
 		char[] result = str.toCharArray();
 		return result;
+	}
+
+	/**
+	 * intの値を16進数表現の文字列に変換します。
+	 *
+	 * @param num
+	 * @return
+	 */
+	public static String toHexString(int num) {
+		return Integer.toHexString(num);
 	}
 
 	/**
@@ -237,26 +280,6 @@ class UtilityForTopCoder {
 		}
 		String result = new String(chars);
 		return result;
-	}
-
-	/**
-	 * intの値を2進数表現の文字列に変換します。
-	 *
-	 * @param num
-	 * @return
-	 */
-	public static String toBinaryString(int num) {
-		return Integer.toBinaryString(num);
-	}
-
-	/**
-	 * intの値を16進数表現の文字列に変換します。
-	 *
-	 * @param num
-	 * @return
-	 */
-	public static String toHexString(int num) {
-		return Integer.toHexString(num);
 	}
 
 	/**
