@@ -37,12 +37,24 @@ class UtilityForTopCoder {
 	 *            対象のHashMapです。String,Integerの組としてますが基本的には何の組み合わせでもいいです。
 	 */
 	public static void getHashMapElement(HashMap<String, Integer> map) {
-
+		// map.keySet()ですべてのkeyのSet (重複しないリスト)を取得できる
 		for (String key : map.keySet()) {
 			int value = map.get(key);
 			System.out.println(value);
 		}
+	}
 
+	/**
+	 * HashMapからすべての値(value)だけを取り出す処理を行います。
+	 *
+	 * @param map
+	 *            対象のHashMapです。String,Integerの組としてますが基本的には何の組み合わせでもいいです。
+	 */
+	public static void getHashMapValue(HashMap<String, Integer> map) {
+		// map.values()ですべての値のCollection(リストのようなもの）を取得できる。
+		for (int value : map.values()) {
+			System.out.println(value);
+		}
 	}
 
 	/**
