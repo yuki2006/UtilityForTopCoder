@@ -112,8 +112,7 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * 配列の最大値の添字を探す処理です。
-	 * よく習う最大値を求める処理になってます。
+	 * 配列の最大値の添字を探す処理です。 よく習う最大値を求める処理になってます。
 	 *
 	 * @author yuki2006
 	 * @param values
@@ -215,8 +214,10 @@ class UtilityForTopCoder {
 		Collections.reverse(list);
 
 		Integer[] integers = list.toArray(new Integer[0]);
-		for (int i = 0; i < values.length; i++) {
-			values[i] = integers[i];
+		int i = 0;
+		for (int value : integers) {
+			values[i] = value;
+			i++;
 		}
 	}
 
@@ -315,14 +316,15 @@ class UtilityForTopCoder {
 	 * @return 一意なもの数
 	 */
 	public static int[] unique(int[] values) {
-		Set<Integer> set = new HashSet<Integer>();
+		HashSet<Integer> set = new HashSet<Integer>();
 		for (int string : values) {
 			set.add(string);
 		}
-		Integer[] tmp = set.toArray(new Integer[0]);
-		int[] result = new int[tmp.length];
-		for (int i = 0; i < result.length; i++) {
-			result[i] = tmp[i];
+		int[] result = new int[set.size()];
+		int i = 0;
+		for (int value : set) {
+			result[i] = value;
+			i++;
 		}
 		return result;
 	}
