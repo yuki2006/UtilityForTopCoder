@@ -95,6 +95,52 @@ class UtilityForTopCoder {
 	}
 
 	/**
+	 * 配列の途中に値を入れます。今まであった部分は１つ後ろにずれます。つまり要素数が+1されます。
+	 *
+	 * @param values
+	 *            対象の配列です。
+	 * @param index
+	 *            入れる箇所です。
+	 * @param value
+	 *            入れる値です。
+	 * @return 処理を行った配列を返します。
+	 * @author yuki2006
+	 */
+	public static int[] insertForArray(int[] values, int index, int value) {
+		int[] result = new int[values.length + 1];
+		int i = 0;
+		for (; i < index; i++) {
+			result[i] = values[i];
+		}
+		result[index] = value;
+		for (; i < values.length; i++) {
+			result[i + 1] = values[i];
+		}
+		return result;
+	}
+
+	/**
+	 * 配列の途中に値を入れます。今まであった部分は１つ後ろにずれます。つまり要素数が+1されます。
+	 * System.arraycopyを使った難しいけど高速な実装です。
+	 *
+	 * @param values
+	 *            対象の配列です。
+	 * @param index
+	 *            入れる箇所です。
+	 * @param value
+	 *            入れる値です。
+	 * @return 処理を行った配列を返します。
+	 * @author yuki2006
+	 */
+	public static int[] insertForArrayH(int[] values, int index, int value) {
+		int[] result = new int[values.length + 1];
+		System.arraycopy(values, 0, result, 0, index);
+		result[index] = value;
+		System.arraycopy(values, index, result, index + 1, values.length - index);
+		return result;
+	}
+
+	/**
 	 * 配列から最大値を探す処理です。 空の配列は渡さないでください。 intではない場合は適宜、型を書き換えてください。
 	 * Math.maxと拡張for文を使って短く記述。
 	 *
@@ -142,6 +188,25 @@ class UtilityForTopCoder {
 			min = Math.min(min, i);
 		}
 		return min;
+	}
+
+	/**
+	 * 配列から最小値を探す処理です。 よく習う最小値を求める処理になってます。
+	 *
+	 * @author yuki2006
+	 * @param values
+	 * @return
+	 */
+	public static int minIndex(int[] values) {
+		int min = Integer.MAX_VALUE;
+		int minIndex = -1;
+		for (int i = 0; i < values.length; i++) {
+			if (min < values[i]) {
+				min = values[i];
+				minIndex = i;
+			}
+		}
+		return minIndex;
 	}
 
 	/**
@@ -308,6 +373,7 @@ class UtilityForTopCoder {
 
 	/**
 	 * 与えられたintの配列で一意なものにする処理です。 int だけでなく必要なら適宜,型を書き換えてください。
+	 * 副作用としてソートされるようです。
 	 *
 	 * @author yuki2006
 	 * @param values

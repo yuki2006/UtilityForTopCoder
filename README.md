@@ -36,7 +36,7 @@ https://github.com/yuki2006/UtilityForTopCoder/blob/master/src/UtilityForTopCode
 UtilityForTopCoder.javaのファイルをそのまま作業フォルダにコピーしてもTopCoder SRMでは使えませんのでご注意ください。
 
 コードをコピーしてもらうのが目標ではなく、それぞれの処理に書かれてるコードを理解してもらって、
-*新しい発見をしたり、自分で書けるようになってもらうのが目標*です。
+**新しい発見をしたり、自分で書けるようになってもらうのが目標**です。
 
 
 
@@ -66,14 +66,15 @@ UtilityForTopCoder.javaのファイルをそのまま作業フォルダにコピ
 * 以下のようにインスタンス化したらインターフェイスで受け取るような記述を実際の開発でしたりしますが、
     オブジェクト指向に精通してないと解読が難しいということでこういった表現はしない方針です。
 
-    List<String> list=new ArrayList<String>()
+    ✕ List\<String\> list=new ArrayList\<String\>();
+    ○ ArrayList\<String\> list=new ArrayList\<String\>();
 
 もし、ここに載っているものより短い or 処理が早い or スマートな記述を知ってる方は是非 Pull Request をお願いします。
 
 
 ゆるぼ
 =======
-プリミティブ型の配列とそのクラス型の配列を一行でに変換できるようなものないでしょうか？
+プリミティブ型の配列とそのクラス型の配列を一行に変換できるようなものないでしょうか？
 （自分でループを回すしかない？）
 
 
