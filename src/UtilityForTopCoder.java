@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * 主にTopCoder用の便利な処理をまとめたUtilityクラスです。 このコードを丸々コピーしてもいいですし、必要な処理だけコピペしてもいいです。
@@ -291,7 +290,7 @@ class UtilityForTopCoder {
 	 * @return
 	 */
 	public static String toString(char c) {
-		return new String(new char[] { c });
+		return String.valueOf(c);
 	}
 
 	/**
@@ -338,7 +337,7 @@ class UtilityForTopCoder {
 	 * @return 一意な配列
 	 */
 	public static String[] unique(String[] strings) {
-		Set<String> set = new HashSet<String>();
+		HashSet<String> set = new HashSet<String>();
 		for (String string : strings) {
 			set.add(string);
 		}

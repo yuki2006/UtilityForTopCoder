@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 /**
  * UtilityForTppCoderをテストするためのMainです。
- *
+ * 
  * @author yuki
- *
+ * 
  */
 public class Test {
 
@@ -16,6 +16,10 @@ public class Test {
 		assert 3 == UtilityForTopCoder.min(array);
 		assert 9 == UtilityForTopCoder.max(array);
 		assert 1 == UtilityForTopCoder.indexOf(array, 5);
+
+		char c = 'a';
+		assert "a".equals(UtilityForTopCoder.toString(c));
+
 		int[] tmp = UtilityForTopCoder.unique(array);
 		assert Arrays.equals(tmp, new int[] { 3, 5, 7, 9 });
 
