@@ -38,5 +38,8 @@ public class Test {
 		assert Arrays.equals(tmp, new int[] { 3, 10, 5, 7, 9, 5 });
 		tmp = UtilityForTopCoder.insertForArrayH(array, 1, 10);
 		assert Arrays.equals(tmp, new int[] { 3, 10, 5, 7, 9, 5 });
+		assert UtilityForTopCoder.isPalindromes("abbba");
+		assert UtilityForTopCoder.isPalindromes("abcdcba");
+		assert UtilityForTopCoder.isPalindromes("abcdecba") == false;
 	}
 }

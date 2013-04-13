@@ -141,6 +141,22 @@ class UtilityForTopCoder {
 	}
 
 	/**
+	 * 与えられた文字列が回文（逆から見ても同じ）になってるかどうかを調べます。
+	 *
+	 * @param str
+	 * @return
+	 */
+	public static boolean isPalindromes(String str) {
+		char[] charArray = str.toCharArray();
+		for (int i = 0; i < charArray.length / 2; i++) {
+			if (charArray[i] != charArray[charArray.length - i - 1]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
 	 * 配列から最大値を探す処理です。 空の配列は渡さないでください。 intではない場合は適宜、型を書き換えてください。
 	 * Math.maxと拡張for文を使って短く記述。
 	 *
