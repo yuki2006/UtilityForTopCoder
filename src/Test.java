@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * UtilityForTppCoderをテストするためのMainです。
@@ -25,6 +26,10 @@ public class Test {
 
 		assert UtilityForTopCoder.bitcount(8) == 1;
 		assert UtilityForTopCoder.bitcount(127) == 7;
+
+		HashMap<String, Integer> hash = UtilityForTopCoder.newHashMap();
+		hash.put("test", 1);
+		assert hash.size() == 1;
 
 	}
 }

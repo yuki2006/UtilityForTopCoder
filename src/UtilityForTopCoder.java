@@ -147,6 +147,18 @@ class UtilityForTopCoder {
 	}
 
 	/**
+	 * HashMapのインスタンス生成を少ない記述でnewすることができます。
+	 * コードテクニック
+	 * code by guava-libraries.(Apache License 2.0)
+	 * https://code.google.com/p/guava-libraries/
+	 *
+	 * @return HashMapのインスタンスを取得します。
+	 */
+	public static <K, V> HashMap<K, V> newHashMap() {
+		return new HashMap<K, V>();
+	}
+
+	/**
 	 * 変数出力の処理例
 	 *
 	 * @author yuki2006
