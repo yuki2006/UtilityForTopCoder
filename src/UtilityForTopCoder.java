@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * 主にTopCoder用の便利な処理をまとめたUtilityクラスです。 このコードを丸々コピーしてもいいですし、必要な処理だけコピペしてもいいです。
@@ -96,6 +95,68 @@ class UtilityForTopCoder {
 	}
 
 	/**
+	 * 配列の途中に値を入れます。今まであった部分は１つ後ろにずれます。つまり要素数が+1されます。
+	 *
+	 * @param values
+	 *            対象の配列です。
+	 * @param index
+	 *            入れる箇所です。
+	 * @param value
+	 *            入れる値です。
+	 * @return 処理を行った配列を返します。
+	 * @author yuki2006
+	 */
+	public static int[] insertForArray(int[] values, int index, int value) {
+		int[] result = new int[values.length + 1];
+		int i = 0;
+		for (; i < index; i++) {
+			result[i] = values[i];
+		}
+		result[index] = value;
+		for (; i < values.length; i++) {
+			result[i + 1] = values[i];
+		}
+		return result;
+	}
+
+	/**
+	 * 配列の途中に値を入れます。今まであった部分は１つ後ろにずれます。つまり要素数が+1されます。
+	 * System.arraycopyを使った難しいけど高速な実装です。
+	 *
+	 * @param values
+	 *            対象の配列です。
+	 * @param index
+	 *            入れる箇所です。
+	 * @param value
+	 *            入れる値です。
+	 * @return 処理を行った配列を返します。
+	 * @author yuki2006
+	 */
+	public static int[] insertForArrayH(int[] values, int index, int value) {
+		int[] result = new int[values.length + 1];
+		System.arraycopy(values, 0, result, 0, index);
+		result[index] = value;
+		System.arraycopy(values, index, result, index + 1, values.length - index);
+		return result;
+	}
+
+	/**
+	 * 与えられた文字列が回文（逆から見ても同じ）になってるかどうかを調べます。
+	 *
+	 * @param str
+	 * @return
+	 */
+	public static boolean isPalindromes(String str) {
+		char[] charArray = str.toCharArray();
+		for (int i = 0; i < charArray.length / 2; i++) {
+			if (charArray[i] != charArray[charArray.length - i - 1]) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
 	 * 配列から最大値を探す処理です。 空の配列は渡さないでください。 intではない場合は適宜、型を書き換えてください。
 	 * Math.maxと拡張for文を使って短く記述。
 	 *
@@ -112,8 +173,7 @@ class UtilityForTopCoder {
 	}
 
 	/**
-	 * 配列の最大値の添字を探す処理です。
-	 * よく習う最大値を求める処理になってます。
+	 * 配列の最大値の添字を探す処理です。 よく習う最大値を求める処理になってます。
 	 *
 	 * @author yuki2006
 	 * @param values
@@ -144,6 +204,25 @@ class UtilityForTopCoder {
 			min = Math.min(min, i);
 		}
 		return min;
+	}
+
+	/**
+	 * 配列から最小値を探す処理です。 よく習う最小値を求める処理になってます。
+	 *
+	 * @author yuki2006
+	 * @param values
+	 * @return
+	 */
+	public static int minIndex(int[] values) {
+		int min = Integer.MAX_VALUE;
+		int minIndex = -1;
+		for (int i = 0; i < values.length; i++) {
+			if (min < values[i]) {
+				min = values[i];
+				minIndex = i;
+			}
+		}
+		return minIndex;
 	}
 
 	/**
@@ -227,8 +306,10 @@ class UtilityForTopCoder {
 		Collections.reverse(list);
 
 		Integer[] integers = list.toArray(new Integer[0]);
-		for (int i = 0; i < values.length; i++) {
-			values[i] = integers[i];
+		int i = 0;
+		for (int value : integers) {
+			values[i] = value;
+			i++;
 		}
 	}
 
@@ -302,7 +383,7 @@ class UtilityForTopCoder {
 	 * @return
 	 */
 	public static String toString(char c) {
-		return new String(new char[] { c });
+		return String.valueOf(c);
 	}
 
 	/**
@@ -320,6 +401,7 @@ class UtilityForTopCoder {
 
 	/**
 	 * 与えられたintの配列で一意なものにする処理です。 int だけでなく必要なら適宜,型を書き換えてください。
+	 * 副作用としてソートされるようです。
 	 *
 	 * @author yuki2006
 	 * @param values
@@ -327,14 +409,15 @@ class UtilityForTopCoder {
 	 * @return 一意なもの数
 	 */
 	public static int[] unique(int[] values) {
-		Set<Integer> set = new HashSet<Integer>();
+		HashSet<Integer> set = new HashSet<Integer>();
 		for (int string : values) {
 			set.add(string);
 		}
-		Integer[] tmp = set.toArray(new Integer[0]);
-		int[] result = new int[tmp.length];
-		for (int i = 0; i < result.length; i++) {
-			result[i] = tmp[i];
+		int[] result = new int[set.size()];
+		int i = 0;
+		for (int value : set) {
+			result[i] = value;
+			i++;
 		}
 		return result;
 	}
@@ -348,7 +431,7 @@ class UtilityForTopCoder {
 	 * @return 一意な配列
 	 */
 	public static String[] unique(String[] strings) {
-		Set<String> set = new HashSet<String>();
+		HashSet<String> set = new HashSet<String>();
 		for (String string : strings) {
 			set.add(string);
 		}
